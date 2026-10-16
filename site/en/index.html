@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lightning Rod — a Taipei food map of only the bad stuff, told kindly</title>
+  <meta name="description" content="Before you go, know what to watch out for. Lightning Rod maps 13,000+ real Taipei restaurants and collects only heads-ups — by food, service, space, getting there and price — with fairness built in: three reports before it counts, owners see it first, and warnings fade when things improve. Free and open source.">
+  <meta name="keywords" content="Taipei restaurants, Taipei food map, restaurant warnings, bad reviews, food map, Taiwan food, honest reviews, OpenStreetMap, open source">
+  <link rel="canonical" href="https://bileizhen.01-crumbs.workers.dev/en/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://bileizhen.01-crumbs.workers.dev/">
+  <link rel="alternate" hreflang="en" href="https://bileizhen.01-crumbs.workers.dev/en/">
+  <link rel="alternate" hreflang="x-default" href="https://bileizhen.01-crumbs.workers.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bileizhen.01-crumbs.workers.dev/en/">
+  <meta property="og:site_name" content="Lightning Rod">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Lightning Rod — a Taipei food map of only the bad stuff, told kindly">
+  <meta property="og:description" content="Before you go, know what to watch out for. Lightning Rod maps 13,000+ real Taipei restaurants and collects only heads-ups — by food, service, space, getting there and price — with fairness built in: three reports before it counts, owners see it first, and warnings fade when things improve. Free and open source.">
+  <meta property="og:image" content="https://bileizhen.01-crumbs.workers.dev/img/og-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bileizhen.01-crumbs.workers.dev/img/og-en.png">
+  <link rel="icon" href="../img/icon.png">
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Lightning Rod","alternateName":"避雷針","applicationCategory":"TravelApplication","operatingSystem":"Web","url":"https://bileizhen.01-crumbs.workers.dev/en/","description":"Before you go, know what to watch out for. Lightning Rod maps 13,000+ real Taipei restaurants and collects only heads-ups — by food, service, space, getting there and price — with fairness built in: three reports before it counts, owners see it first, and warnings fade when things improve. Free and open source.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://github.com/yoyolan1223/bileizhen"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../i18n.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <a class="brand" href="#" data-act="home" aria-label="Lightning Rod home">
+        <span class="brand-mark" id="brandMark"></span>
+        <span class="brand-name">Lightning Rod</span>
+      </a>
+      <label class="search">
+        <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" fill="none"/><path d="M13.5 13.5 17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Search places, cuisines, districts, or “queue”, “service charge”…" autocomplete="off">
+      </label>
+      <nav class="top-nav">
+        <button class="nav-btn" data-act="fair">How we stay fair</button>
+        <button class="nav-btn lang" data-act="lang" title="切換成中文">中文</button>
+        <button class="me-btn" data-act="me" aria-label="My page"><span id="meChip"></span></button>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside class="panel" id="panel"></aside>
+      <section class="map-wrap">
+        <div id="map" role="application" aria-label="Heads-up map"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="../data.js"></script>
+  <script src="../taipei.js"></script>
+  <script src="../app.js"></script>
+  <script src="../track.js" defer></script>
+</body>
+</html>

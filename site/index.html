@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>避雷針 — 只收負評的台北美食地圖</title>
+  <meta name="description" content="去之前先知道要注意什麼。避雷針把台北 13,000 多家真實餐廳放上地圖，只收避雷資訊：分食物、服務、環境、交通、價格，三人成雷、先給店家看、改善就消散，對店家也公平。免費、開源。">
+  <meta name="keywords" content="台北美食, 避雷, 美食地圖, 負評, 踩雷, 餐廳評價, 台北餐廳, 排隊, 服務費, OpenStreetMap, 開源">
+  <link rel="canonical" href="https://bileizhen.01-crumbs.workers.dev/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://bileizhen.01-crumbs.workers.dev/">
+  <link rel="alternate" hreflang="en" href="https://bileizhen.01-crumbs.workers.dev/en/">
+  <link rel="alternate" hreflang="x-default" href="https://bileizhen.01-crumbs.workers.dev/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bileizhen.01-crumbs.workers.dev/">
+  <meta property="og:site_name" content="避雷針">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:title" content="避雷針 — 只收負評的台北美食地圖">
+  <meta property="og:description" content="去之前先知道要注意什麼。避雷針把台北 13,000 多家真實餐廳放上地圖，只收避雷資訊：分食物、服務、環境、交通、價格，三人成雷、先給店家看、改善就消散，對店家也公平。免費、開源。">
+  <meta property="og:image" content="https://bileizhen.01-crumbs.workers.dev/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://bileizhen.01-crumbs.workers.dev/img/og.png">
+  <link rel="icon" href="img/icon.png">
+  <link rel="apple-touch-icon" href="img/icon.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"避雷針","alternateName":"Lightning Rod","applicationCategory":"TravelApplication","operatingSystem":"Web","url":"https://bileizhen.01-crumbs.workers.dev/","description":"去之前先知道要注意什麼。避雷針把台北 13,000 多家真實餐廳放上地圖，只收避雷資訊：分食物、服務、環境、交通、價格，三人成雷、先給店家看、改善就消散，對店家也公平。免費、開源。","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://github.com/yoyolan1223/bileizhen"]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Outfit:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="i18n.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <a class="brand" href="#" data-act="home" aria-label="避雷針首頁">
+        <span class="brand-mark" id="brandMark"></span>
+        <span class="brand-name">避雷針</span>
+      </a>
+      <label class="search">
+        <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" fill="none"/><path d="M13.5 13.5 17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="搜尋店名、料理、地區，或「排隊」「服務費」…" autocomplete="off">
+      </label>
+      <nav class="top-nav">
+        <button class="nav-btn" data-act="fair">怎麼對店家公平</button>
+        <button class="nav-btn lang" data-act="lang" title="Switch to English">EN</button>
+        <button class="me-btn" data-act="me" aria-label="我的頁面"><span id="meChip"></span></button>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside class="panel" id="panel"></aside>
+      <section class="map-wrap">
+        <div id="map" role="application" aria-label="避雷地圖"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="modal" class="modal" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="data.js"></script>
+  <script src="taipei.js"></script>
+  <script src="app.js"></script>
+  <script src="track.js" defer></script>
+</body>
+</html>

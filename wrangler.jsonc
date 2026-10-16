@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bileizhen",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "observability": { "enabled": true },
+  "assets": {
+    "directory": "site",
+    "binding": "ASSETS",
+    // the worker sees these first: page-view beacon and the private stats page
+    "run_worker_first": ["/api/*", "/stats"]
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "bileizhen-stats", "database_id": "2a6f15ab-4844-43d3-bcdb-bcef0b276aab" }
+  ]
+}
